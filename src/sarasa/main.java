@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 import java.util.Set;
 
 import com.google.common.collect.Sets;
@@ -31,11 +32,22 @@ public class main {
 	     
 	     Set<List<String>> cartesianSet = Sets.cartesianProduct(sets);
 	     
+	     
+	     List<String> listaAux= new ArrayList<String>();
+    	 
 	     for(List<String> element : cartesianSet ){
 	    	 
-	    	 System.out.println(element);
+	    	 listaAux.add(element.toString());
 	     }
-	     
+
+	     System.out.println(getRandomList(listaAux));
+	}
+	
+	public static String getRandomList(List<String> list) {
+	    Random random = new Random();
+	    int index = random.nextInt(list.size());
+	    System.out.println("\nIndex :" + index );
+	    return list.get(index);
 	}
 
 }
